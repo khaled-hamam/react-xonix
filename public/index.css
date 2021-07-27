@@ -1,0 +1,33 @@
+:root {
+  --primary: #303653;
+}
+
+body {
+  font-family: 'Tourney';
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+}
+
+.app,
+.sidebar {
+  display: flex;
+}
+
+.sidebar {
+  font-size: 21px;
+  max-width: 30%;
+  flex-direction: column;
+  flex-grow: 1;
+  color: #fff;
+  padding: 20pt 20pt 5pt;
+}
+
+.sidebar h1 {
+  font-size: 64px;
+  font-weight: 200;
+}
+
+.sidebar p {
+  font-weight: 900;
+}
