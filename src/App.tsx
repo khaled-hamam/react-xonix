@@ -31,11 +31,13 @@ function App() {
 
   return (
     <div className="app p-4">
+      <p className="footer">Coded with <span role="img" aria-label="love">❤️</span> by Khaled Mohamed</p>
       <div className="sidebar">
         <h1 className="mb-5">React Xonix</h1>
         <p>Life: <span className="badge badge-pill badge-dark">{ engine.current.player.lives }</span></p>
         <p>Score: <span className="badge badge-pill badge-dark">{ engine.current.grid.score }</span></p>
         <p>High Score: <span className="badge badge-pill badge-dark">{ getHighScore() }</span></p>
+
       </div>
       <div className="d-flex flex-column">
         { grid.map((row, rowIndex) => (

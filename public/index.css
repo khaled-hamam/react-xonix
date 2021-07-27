@@ -31,3 +31,11 @@ body {
 .sidebar p {
   font-weight: 900;
 }
+
+.footer {
+  font-size: 14px;
+  color: #fff;
+  font-family: "Source Sans Pro";
+  bottom: 0;
+  position: absolute;
+}
