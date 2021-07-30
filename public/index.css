@@ -39,3 +39,8 @@ body {
   bottom: 0;
   position: absolute;
 }
+
+.version {
+  font-size: 12px;
+  margin-left: 10px;
+}

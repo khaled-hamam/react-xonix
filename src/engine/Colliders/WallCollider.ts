@@ -19,14 +19,10 @@ export class WallCollider implements PlayerCollider, EnemyCollider {
       return;
     }
 
-    let yVelocityReflected = false;
-    let xVelocityReflected = false;
-
     if (
       grid.getCell(enemy.position.left()) === Cell.Wall ||
       grid.getCell(enemy.position.right()) === Cell.Wall
     ) {
-      xVelocityReflected = true;
       enemy.reflectXVelocity();
     }
 
@@ -34,14 +30,7 @@ export class WallCollider implements PlayerCollider, EnemyCollider {
       grid.getCell(enemy.position.up()) === Cell.Wall ||
       grid.getCell(enemy.position.down()) === Cell.Wall
     ) {
-      yVelocityReflected = true;
       enemy.reflectYVelocity();
-    }
-
-    if (yVelocityReflected === false && xVelocityReflected === false) {
-        enemy
-          .reflectXVelocity()
-          .reflectYVelocity();
     }
   }
 }

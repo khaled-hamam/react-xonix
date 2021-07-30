@@ -4,6 +4,8 @@ import { EnemyCollider } from "./Colliders/EnemyCollider";
 import { Entity } from "./Entity";
 import { Position } from "./Position";
 import { Velocity } from "./Velocity";
+import { Grid } from "./Grid";
+import { Cell } from "./Cell";
 
 type EnemyConstructorArgs = {
   position?: Position;
@@ -25,7 +27,11 @@ export class Enemy extends Entity implements Collidable<EnemyCollider> {
   }
 
   public reflectXVelocity(): this {
-    this.velocity = this.velocity.reflect({ x: true, y: true });
+    this.velocity = this.velocity.reflect({ x: true, y: false });
     return this;
+  }
+
+  protected override isValidPositionHook(newPosition: Position, grid: Grid): boolean {
+    return grid.getCell(newPosition) !== Cell.Wall;
   }
 }

@@ -5,6 +5,8 @@ import { Cell, XonixEngine } from "./engine";
 import { useLazyRef } from "./useLazyRef";
 import { getHighScore, setHighScore } from "./utils";
 
+import { version } from '../package.json';
+
 function App() {
   const engine = useLazyRef(() => new XonixEngine());
 
@@ -31,7 +33,7 @@ function App() {
 
   return (
     <div className="app p-4">
-      <p className="footer">Coded with <span role="img" aria-label="love">❤️</span> by Khaled Mohamed</p>
+      <p className="footer">Coded with <span role="img" aria-label="love">❤️</span> by Khaled Mohamed <span className="version">v.{version}</span></p>
       <div className="sidebar">
         <h1 className="mb-5">React Xonix</h1>
         <p>Life: <span className="badge badge-pill badge-dark">{ engine.current.player.lives }</span></p>

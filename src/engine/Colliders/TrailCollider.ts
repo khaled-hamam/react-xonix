@@ -9,8 +9,7 @@ import { EventsManager } from "../EventsManager";
 export class TrailCollider implements PlayerCollider, EnemyCollider {
   public collideWithPlayer(player: Player, grid: Grid): void {
     if (grid.getCell(player.position) === Cell.Trail) {
-      player.applyVelocity('static');
-      EventsManager.instance.emit('FILL_GRID');
+      EventsManager.instance.emit('LOSE_LIFE');
     }
   }
 

@@ -9,13 +9,16 @@ export abstract class Entity {
   public move(grid: Grid): this {
     const newPosition = this.position.move(this.velocity);
 
-    if (grid.isWithinBounds(newPosition)) {
+    if (grid.isWithinBounds(newPosition) && this.isValidPositionHook(newPosition, grid)) {
       this.position = newPosition;
     }
 
     return this;
   }
 
+  protected isValidPositionHook(newPosition: Position, grid: Grid): boolean {
+    return true;
+  }
 
   public hasNeighbor(grid: Grid, cell: Cell) {
     const neighborCells = [
