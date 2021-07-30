@@ -3,9 +3,11 @@ import useInterval from "@use-it/interval";
 
 import { Cell, XonixEngine } from "./engine";
 import { useLazyRef } from "./useLazyRef";
-import { getHighScore, setHighScore } from "./utils";
+import { getHighScore, resetHighScore, setHighScore } from "./utils";
 
 import { version } from '../package.json';
+
+resetHighScore('1.3.1');
 
 function App() {
   const engine = useLazyRef(() => new XonixEngine());

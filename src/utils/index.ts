@@ -12,3 +12,12 @@ export const setHighScore = (value: number) => {
   const prevHighScore = getHighScore();
   localStorage.setItem('HIGH_SCORE', String(Math.max(value, prevHighScore)));
 }
+
+export const resetHighScore = (version: string) => {
+  const lastReset = localStorage.getItem('LAST_RESET');
+
+  if (lastReset !== version) {
+    localStorage.removeItem('HIGH_SCORE');
+    localStorage.setItem('LAST_RESET', version);
+  }
+}
